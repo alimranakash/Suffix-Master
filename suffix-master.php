@@ -1,13 +1,18 @@
 <?php
 /**
  * Plugin Name: Suffix Master – Smart Title, Price & Content Branding
- * Description: Plugin for Client
- * Plugin URI:  https://wpplugines.com/
+ * Description: Automatically add custom suffixes to titles, prices, content, and slugs across your WordPress site with advanced WooCommerce integration and per-item control.
+ * Plugin URI:  https://wordpress.org/plugins/suffix-master/
  * Author:      Al Imran Akash
  * Author URI:  https://profiles.wordpress.org/al-imran-akash/
  * Version: 	0.9
  * Text Domain: suffix-master
  * Domain Path: /languages
+ * License:     GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Requires at least: 4.0
+ * Tested up to: 6.8
+ * Requires PHP: 5.6
  */
 
 namespace Worzen\Suffix_Master;
@@ -101,7 +106,6 @@ final class Plugin {
 		$this->plugin					= get_plugin_data( SUFFIXMASTER );
 		$this->plugin['basename']		= plugin_basename( SUFFIXMASTER );
 		$this->plugin['file']			= SUFFIXMASTER;
-		$this->plugin['server']			= apply_filters( 'plugin-client_server', 'https://worzen.com/dashboard' );
 		$this->plugin['min_php']		= '5.6';
 		$this->plugin['min_wp']			= '4.0';
 		$this->plugin['icon']			= SUFFIXMASTER_ASSET . '/img/icon.png';

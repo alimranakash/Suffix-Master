@@ -38,12 +38,8 @@ class Cron extends Base {
 	 * @since 1.0
 	 */
 	public function install() {
-		/**
-		 * Schedule an event to sync help docs
-		 */
-		if ( ! wp_next_scheduled( 'codexpert-daily' ) ) {
-		    wp_schedule_event( time(), 'daily', 'codexpert-daily' );
-		}
+		// No external cron events needed for WordPress.org version
+		// All functionality is self-contained
 	}
 
 	/**
