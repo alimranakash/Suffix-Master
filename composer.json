@@ -1,0 +1,19 @@
+{
+    "authors": [
+        {
+            "name": "Worzen",
+            "email": "hello@worzen.com"
+        }
+    ],
+    "require": {
+        "codexpert/plugin": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Worzen\\Suffix_Master\\" : "classes/",
+            "Worzen\\Suffix_Master\\App\\" : "app/",
+            "Worzen\\Suffix_Master\\API\\" : "api/"
+        },
+        "files": [ "inc/functions.php" ]
+    }
+}

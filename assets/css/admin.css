@@ -1,0 +1,115 @@
+#plugin-client-modal {
+    position: fixed;
+    background: #c8c8c859;
+    top: 0;
+    border: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#plugin-client-modal-loader {
+    position: absolute;
+}
+
+/* Suffix Master Specific Styles */
+#suffix-master-preview {
+    border-left: 4px solid #0073aa;
+    background: #f7f7f7;
+    border-radius: 4px;
+}
+
+#suffix-master-preview h3 {
+    margin-top: 0;
+    color: #0073aa;
+    font-size: 16px;
+}
+
+#preview-content p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+#preview-content strong {
+    color: #333;
+}
+
+#preview-title,
+#preview-product-title,
+#preview-price,
+#preview-slug {
+    color: #0073aa;
+    font-weight: 600;
+    font-family: monospace;
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.suffix-master-metabox table.form-table {
+    margin: 0;
+}
+
+.suffix-master-metabox table.form-table td {
+    padding: 8px 0;
+}
+
+.suffix-master-metabox input[type="text"],
+.suffix-master-metabox textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.suffix-master-metabox small {
+    color: #666;
+    font-style: italic;
+}
+
+#suffix-master-reset-all {
+    transition: all 0.3s ease;
+}
+
+#suffix-master-reset-all:hover {
+    background-color: #d63638;
+    color: #fff;
+    border-color: #d63638;
+}
+
+.suffix-master-content-footer {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-left: 4px solid #0073aa;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Settings page enhancements */
+.cx-settings-wrapper .suffix-master-section {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.cx-settings-wrapper .suffix-master-section h3 {
+    background: #f7f7f7;
+    margin: 0;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #suffix-master-preview {
+        margin: 10px;
+    }
+
+    #preview-content p {
+        font-size: 13px;
+    }
+}

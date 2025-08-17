@@ -1,0 +1,58 @@
+#plugin-client-modal {
+    position: fixed;
+    background: #c8c8c859;
+    top: 0;
+    border: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#plugin-client-modal-loader {
+    position: absolute;
+}
+
+/* Suffix Master Frontend Styles */
+.suffix-master-content-footer {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-left: 4px solid #0073aa;
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.suffix-master-price-suffix {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: normal;
+}
+
+.suffix-master-content-footer p:last-child {
+    margin-bottom: 0;
+}
+
+.suffix-master-content-footer h1,
+.suffix-master-content-footer h2,
+.suffix-master-content-footer h3,
+.suffix-master-content-footer h4,
+.suffix-master-content-footer h5,
+.suffix-master-content-footer h6 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .suffix-master-content-footer {
+        margin-left: -15px;
+        margin-right: -15px;
+        border-radius: 0;
+        border-left: none;
+        border-top: 4px solid #0073aa;
+    }
+}

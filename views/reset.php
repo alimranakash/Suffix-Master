@@ -1,0 +1,1 @@
+<button type="button" id="suffix-master-reset-all" class="button button-secondary" style="color: #d63638; border-color: #d63638;">' . __( 'Reset All Settings', 'suffix-master' ) . '</button>
