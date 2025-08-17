@@ -46,7 +46,7 @@ class AJAX extends Base {
 	 */
 	public function reset_all_settings() {
 		// Verify nonce
-		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'], 'wp_rest' ) ) {
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'], 'suffix_master_ajax' ) ) {
 			\Worzen\Suffix_Master\Validator::log_security_event( 'Invalid nonce for reset all settings' );
 			wp_send_json_error( 'Invalid nonce' );
 		}
@@ -60,8 +60,11 @@ class AJAX extends Base {
 		// Log the action
 		\Worzen\Suffix_Master\Validator::log_security_event( 'Settings reset performed' );
 
-		// Delete the plugin options
+		// Delete all plugin options (including the new sectioned options)
 		delete_option( 'suffix-master' );
+		delete_option( 'suffix_master_global' );
+		delete_option( 'suffix_master_woocommerce' );
+		delete_option( 'suffix_master_tools' );
 
 		// Send success response
 		wp_send_json_success( 'All settings have been reset successfully.' );

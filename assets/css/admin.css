@@ -20,21 +20,33 @@
     border-left: 4px solid #0073aa;
     background: #f7f7f7;
     border-radius: 4px;
+    margin-bottom: 20px !important;
+    padding: 15px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 #suffix-master-preview h3 {
     margin-top: 0;
+    margin-bottom: 15px;
     color: #0073aa;
     font-size: 16px;
+    font-weight: 600;
 }
 
 #preview-content p {
     margin: 8px 0;
     font-size: 14px;
+    line-height: 1.4;
 }
 
 #preview-content strong {
     color: #333;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 140px;
 }
 
 #preview-title,
@@ -77,6 +89,16 @@
     background-color: #d63638;
     color: #fff;
     border-color: #d63638;
+}
+
+/* Hide the input field for reset button */
+#reset_all_button {
+    display: none !important;
+}
+
+/* Style the reset button container */
+.cx-field-reset_all_button .cx-field-desc {
+    margin-top: 0;
 }
 
 .suffix-master-content-footer {

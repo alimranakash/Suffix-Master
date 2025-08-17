@@ -71,7 +71,7 @@ class Admin extends Base {
 		// Localize script for AJAX and other data
 		$localized = [
 			'ajaxurl'	=> admin_url( 'admin-ajax.php' ),
-			'_wpnonce'	=> wp_create_nonce(),
+			'_wpnonce'	=> wp_create_nonce( 'suffix_master_ajax' ),
 			'site_name'	=> get_bloginfo( 'name' ),
 		];
 		wp_localize_script( $this->slug, 'SUFFIXMASTER', apply_filters( "{$this->slug}-localized", $localized ) );

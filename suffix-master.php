@@ -5,7 +5,7 @@
  * Plugin URI:  https://wpplugines.com/
  * Author:      Al Imran Akash
  * Author URI:  https://profiles.wordpress.org/al-imran-akash/
- * Version: 0.9
+ * Version: 	0.9
  * Text Domain: suffix-master
  * Domain Path: /languages
  */
