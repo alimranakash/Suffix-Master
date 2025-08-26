@@ -1,9 +1,9 @@
-let pc_modal = ( show = true ) => {
+let suffmasm_modal = ( show = true ) => {
 	if(show) {
-		jQuery('#plugin-client-modal').show();
+		jQuery('#suffix-master-modal').show();
 	}
 	else {
-		jQuery('#plugin-client-modal').hide();
+		jQuery('#suffix-master-modal').hide();
 	}
 }
 

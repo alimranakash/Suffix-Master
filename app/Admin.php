@@ -39,7 +39,7 @@ class Admin extends Base {
 	 * Internationalization
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'plugin-client', false, SUFFIXMASTER_DIR . '/languages/' );
+		load_plugin_textdomain( 'suffix-master', false, SUFFIXMASTER_DIR . '/languages/' );
 	}
 
 	/**
@@ -49,12 +49,12 @@ class Admin extends Base {
 	 */
 	public function install() {
 
-		if( ! get_option( 'plugin-client_version' ) ){
-			update_option( 'plugin-client_version', $this->version );
+		if( ! get_option( 'suffix_master_version' ) ){
+			update_option( 'suffix_master_version', $this->version );
 		}
-		
-		if( ! get_option( 'plugin-client_install_time' ) ){
-			update_option( 'plugin-client_install_time', time() );
+
+		if( ! get_option( 'suffix_master_install_time' ) ){
+			update_option( 'suffix_master_install_time', time() );
 		}
 	}
 
@@ -81,13 +81,13 @@ class Admin extends Base {
 		if( get_current_screen()->parent_base != $this->slug ) return $text;
 
 		// Only show custom footer text on plugin pages, without external links
-		return sprintf( __( 'Thank you for using %s!' ), $this->name );
+		return sprintf( esc_html__( 'Thank you for using %s!', 'suffix-master' ), esc_html( $this->name ) );
 	}
 
 	public function modal() {
 		echo '
-		<div id="plugin-client-modal" style="display: none">
-			<img id="plugin-client-modal-loader" src="' . esc_attr( SUFFIXMASTER_ASSET . '/img/loader.gif' ) . '" />
+		<div id="suffix-master-modal" style="display: none">
+			<img id="suffix-master-modal-loader" src="' . esc_attr( SUFFIXMASTER_ASSET . '/img/loader.gif' ) . '" />
 		</div>';
 	}
 
@@ -135,20 +135,20 @@ class Admin extends Base {
 		echo '<div class="suffix-master-metabox">';
 		echo '<table class="form-table">';
 		echo '<tr>';
-		echo '<td><label for="suffix_master_title">' . __( 'Title Suffix:', 'suffix-master' ) . '</label></td>';
+		echo '<td><label for="suffix_master_title">' . esc_html__( 'Title Suffix:', 'suffix-master' ) . '</label></td>';
 		echo '</tr>';
 		echo '<tr>';
-		echo '<td><input type="text" id="suffix_master_title" name="suffix_master_title" value="' . esc_attr( $title_suffix ) . '" style="width: 100%;" placeholder="' . __( 'Override global title suffix', 'suffix-master' ) . '" /></td>';
+		echo '<td><input type="text" id="suffix_master_title" name="suffix_master_title" value="' . esc_attr( $title_suffix ) . '" style="width: 100%;" placeholder="' . esc_attr__( 'Override global title suffix', 'suffix-master' ) . '" /></td>';
 		echo '</tr>';
 		echo '<tr>';
-		echo '<td><label for="suffix_master_content">' . __( 'Content Footer:', 'suffix-master' ) . '</label></td>';
+		echo '<td><label for="suffix_master_content">' . esc_html__( 'Content Footer:', 'suffix-master' ) . '</label></td>';
 		echo '</tr>';
 		echo '<tr>';
-		echo '<td><textarea id="suffix_master_content" name="suffix_master_content" rows="3" style="width: 100%;" placeholder="' . __( 'Override global content footer', 'suffix-master' ) . '">' . esc_textarea( $content_suffix ) . '</textarea></td>';
+		echo '<td><textarea id="suffix_master_content" name="suffix_master_content" rows="3" style="width: 100%;" placeholder="' . esc_attr__( 'Override global content footer', 'suffix-master' ) . '">' . esc_textarea( $content_suffix ) . '</textarea></td>';
 		echo '</tr>';
 		echo '</table>';
 
-		echo '<p><small>' . __( 'Available placeholders: {year}, {site_name}', 'suffix-master' ) . '</small></p>';
+		echo '<p><small>' . esc_html__( 'Available placeholders: {year}, {site_name}', 'suffix-master' ) . '</small></p>';
 		echo '</div>';
 	}
 
@@ -167,26 +167,26 @@ class Admin extends Base {
 		echo '<div class="suffix-master-metabox">';
 		echo '<table class="form-table">';
 		echo '<tr>';
-		echo '<td><label for="suffix_master_product_title">' . __( 'Product Title Suffix:', 'suffix-master' ) . '</label></td>';
+		echo '<td><label for="suffix_master_product_title">' . esc_html__( 'Product Title Suffix:', 'suffix-master' ) . '</label></td>';
 		echo '</tr>';
 		echo '<tr>';
-		echo '<td><input type="text" id="suffix_master_product_title" name="suffix_master_product_title" value="' . esc_attr( $title_suffix ) . '" style="width: 100%;" placeholder="' . __( 'Override global product title suffix', 'suffix-master' ) . '" /></td>';
+		echo '<td><input type="text" id="suffix_master_product_title" name="suffix_master_product_title" value="' . esc_attr( $title_suffix ) . '" style="width: 100%;" placeholder="' . esc_attr__( 'Override global product title suffix', 'suffix-master' ) . '" /></td>';
 		echo '</tr>';
 		echo '<tr>';
-		echo '<td><label for="suffix_master_price">' . __( 'Price Suffix:', 'suffix-master' ) . '</label></td>';
+		echo '<td><label for="suffix_master_price">' . esc_html__( 'Price Suffix:', 'suffix-master' ) . '</label></td>';
 		echo '</tr>';
 		echo '<tr>';
-		echo '<td><input type="text" id="suffix_master_price" name="suffix_master_price" value="' . esc_attr( $price_suffix ) . '" style="width: 100%;" placeholder="' . __( 'Override global price suffix', 'suffix-master' ) . '" /></td>';
+		echo '<td><input type="text" id="suffix_master_price" name="suffix_master_price" value="' . esc_attr( $price_suffix ) . '" style="width: 100%;" placeholder="' . esc_attr__( 'Override global price suffix', 'suffix-master' ) . '" /></td>';
 		echo '</tr>';
 		echo '<tr>';
-		echo '<td><label for="suffix_master_content">' . __( 'Content Footer:', 'suffix-master' ) . '</label></td>';
+		echo '<td><label for="suffix_master_content">' . esc_html__( 'Content Footer:', 'suffix-master' ) . '</label></td>';
 		echo '</tr>';
 		echo '<tr>';
-		echo '<td><textarea id="suffix_master_content" name="suffix_master_content" rows="3" style="width: 100%;" placeholder="' . __( 'Override global content footer', 'suffix-master' ) . '">' . esc_textarea( $content_suffix ) . '</textarea></td>';
+		echo '<td><textarea id="suffix_master_content" name="suffix_master_content" rows="3" style="width: 100%;" placeholder="' . esc_attr__( 'Override global content footer', 'suffix-master' ) . '">' . esc_textarea( $content_suffix ) . '</textarea></td>';
 		echo '</tr>';
 		echo '</table>';
 
-		echo '<p><small>' . __( 'Available placeholders: {year}, {site_name}', 'suffix-master' ) . '</small></p>';
+		echo '<p><small>' . esc_html__( 'Available placeholders: {year}, {site_name}', 'suffix-master' ) . '</small></p>';
 		echo '</div>';
 	}
 
@@ -211,7 +211,7 @@ class Admin extends Base {
 
 		// Handle regular posts and pages
 		if ( in_array( $post_type, [ 'post', 'page' ] ) ) {
-			if ( ! isset( $_POST['suffix_master_metabox_nonce'] ) || ! wp_verify_nonce( $_POST['suffix_master_metabox_nonce'], 'suffix_master_metabox' ) ) {
+			if ( ! isset( $_POST['suffix_master_metabox_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['suffix_master_metabox_nonce'] ) ), 'suffix_master_metabox' ) ) {
 				Validator::log_security_event( 'Invalid nonce for post metabox', [ 'post_id' => $post_id ] );
 				return;
 			}
@@ -229,7 +229,7 @@ class Admin extends Base {
 
 		// Handle WooCommerce products
 		if ( $post_type === 'product' ) {
-			if ( ! isset( $_POST['suffix_master_product_metabox_nonce'] ) || ! wp_verify_nonce( $_POST['suffix_master_product_metabox_nonce'], 'suffix_master_product_metabox' ) ) {
+			if ( ! isset( $_POST['suffix_master_product_metabox_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['suffix_master_product_metabox_nonce'] ) ), 'suffix_master_product_metabox' ) ) {
 				Validator::log_security_event( 'Invalid nonce for product metabox', [ 'post_id' => $post_id ] );
 				return;
 			}

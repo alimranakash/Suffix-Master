@@ -46,7 +46,7 @@ class AJAX extends Base {
 	 */
 	public function reset_all_settings() {
 		// Verify nonce
-		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'], 'suffix_master_ajax' ) ) {
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'suffix_master_ajax' ) ) {
 			\Worzen\Suffix_Master\Validator::log_security_event( 'Invalid nonce for reset all settings' );
 			wp_send_json_error( 'Invalid nonce' );
 		}

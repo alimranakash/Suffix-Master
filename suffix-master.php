@@ -12,11 +12,10 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Requires at least: 4.0
  * Tested up to: 6.8
- * Requires PHP: 5.6
+ * Requires PHP: 7.0
  */
 
 namespace Worzen\Suffix_Master;
-use Codexpert\Plugin\Notice;
 
 /**
  * if accessed directly, exit.
@@ -95,7 +94,7 @@ final class Plugin {
 		define( 'SUFFIXMASTER', __FILE__ );
 		define( 'SUFFIXMASTER_DIR', dirname( SUFFIXMASTER ) );
 		define( 'SUFFIXMASTER_ASSET', plugins_url( 'assets', SUFFIXMASTER ) );
-		define( 'SUFFIXMASTER_DEBUG', apply_filters( 'plugin-client_debug', true ) );
+		define( 'SUFFIXMASTER_DEBUG', apply_filters( 'suffix_master_debug', true ) );
 
 		/**
 		 * The plugin data
@@ -106,8 +105,9 @@ final class Plugin {
 		$this->plugin					= get_plugin_data( SUFFIXMASTER );
 		$this->plugin['basename']		= plugin_basename( SUFFIXMASTER );
 		$this->plugin['file']			= SUFFIXMASTER;
-		$this->plugin['min_php']		= '5.6';
+		$this->plugin['min_php']		= '7.0';
 		$this->plugin['min_wp']			= '4.0';
+		$this->plugin['server']			= '';
 		$this->plugin['icon']			= SUFFIXMASTER_ASSET . '/img/icon.png';
 		$this->plugin['depends']		= [ '' ];
 		
@@ -151,15 +151,6 @@ final class Plugin {
 			 */
 			$settings = new App\Settings( $this->plugin );
 			$settings->action( 'plugins_loaded', 'init_menu' );
-
-			/**
-			 * Renders different notices
-			 * 
-			 * @package Codexpert\Plugin
-			 * 
-			 * @author Worzen<hello@worzen.com>
-			 */
-			$notice = new Notice( $this->plugin );
 
 		else : // ! is_admin() ?
 

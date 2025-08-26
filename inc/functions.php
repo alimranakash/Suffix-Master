@@ -10,8 +10,8 @@ if( ! function_exists( 'get_plugin_data' ) ) {
  * 
  * @return string $url the site URL
  */
-if( ! function_exists( 'pc_site_url' ) ) :
-function pc_site_url() {
+if( ! function_exists( 'suffmasm_site_url' ) ) :
+function suffmasm_site_url() {
 	$url = get_bloginfo( 'url' );
 
 	return $url;

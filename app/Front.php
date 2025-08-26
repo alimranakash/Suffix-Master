@@ -52,8 +52,8 @@ class Front extends Base {
 
 	public function modal() {
 		echo '
-		<div id="plugin-client-modal" style="display: none">
-			<img id="plugin-client-modal-loader" src="' . esc_attr( SUFFIXMASTER_ASSET . '/img/loader.gif' ) . '" />
+		<div id="suffix-master-modal" style="display: none">
+			<img id="suffix-master-modal-loader" src="' . esc_attr( SUFFIXMASTER_ASSET . '/img/loader.gif' ) . '" />
 		</div>';
 	}
 

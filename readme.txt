@@ -1,10 +1,9 @@
-=== Suffix Master - Smart Title, Price & Content Branding ===
+=== Suffix Master ===
 Contributors: al-imran-akash 
-Donate link: https://worzen.com/donate
 Tags: suffix, title, woocommerce, branding, seo, content, price, slug, customization, marketing
 Requires at least: 4.0
 Tested up to: 6.8
-Requires PHP: 5.6
+Requires PHP: 7.0
 Stable tag: 0.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html

@@ -32,7 +32,10 @@ class Helper {
 		echo '</pre>';
 
 		if( is_admin() && $hide_adminbar ) {
-			echo '<style>#adminmenumain{display:none;}</style>';
+			// Use proper WordPress enqueue method instead of direct echo
+			add_action( 'admin_head', function() {
+				wp_add_inline_style( 'admin-bar', '#adminmenumain{display:none;}' );
+			} );
 		}
 	}
 
@@ -221,7 +224,7 @@ class Helper {
 	public static function get_template( $slug, $base = 'views', $args = null ) {
 
 		// templates can be placed in this directory
-		$overwrite_template_dir = apply_filters( 'SUFFIXMASTER_template_overwrite_dir', get_stylesheet_directory() . '/plugin-client/', $slug, $base, $args );
+		$overwrite_template_dir = apply_filters( 'SUFFIXMASTER_template_overwrite_dir', get_stylesheet_directory() . '/suffix-master/', $slug, $base, $args );
 		
 		// default template directory
 		$plugin_template_dir = dirname( SUFFIXMASTER ) . "/{$base}/";
@@ -245,7 +248,7 @@ class Helper {
 			return ob_get_clean();
 		}
 		else {
-			return __( 'Template not found!', 'plugin-client' );
+			return __( 'Template not found!', 'suffix-master' );
 		}
 	}
 }

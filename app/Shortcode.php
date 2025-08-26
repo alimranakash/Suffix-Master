@@ -32,6 +32,6 @@ class Shortcode extends Base {
     }
 
     public function my_shortcode() {
-        return __( 'My Shortcode', 'plugin-client' );
+        return __( 'My Shortcode', 'suffix-master' );
     }
 }

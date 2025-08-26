@@ -1,15 +1,17 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 use Codexpert\Plugin\Table;
 
 $config = [
 	'per_page'		=> 5,
 	'columns'		=> [
-		'id'				=> __( 'Order #', 'plugin-client' ),
-		'products'			=> __( 'Products', 'plugin-client' ),
-		'order_total'		=> __( 'Order Total', 'plugin-client' ),
-		'commission'		=> __( 'Commission', 'plugin-client' ),
-		'payment_status'	=> __( 'Payment Status', 'plugin-client' ),
-		'time'				=> __( 'Time', 'plugin-client' ),
+		'id'				=> __( 'Order #', 'suffix-master' ),
+		'products'			=> __( 'Products', 'suffix-master' ),
+		'order_total'		=> __( 'Order Total', 'suffix-master' ),
+		'commission'		=> __( 'Commission', 'suffix-master' ),
+		'payment_status'	=> __( 'Payment Status', 'suffix-master' ),
+		'time'				=> __( 'Time', 'suffix-master' ),
 	],
 	'sortable'		=> [ 'visit', 'id', 'products', 'commission', 'payment_status', 'time' ],
 	'orderby'		=> 'time',
@@ -23,8 +25,8 @@ $config = [
 		[ 'id' => 109, 'products' => 'Rio', 'order_total' => '$211', 'commission' => '$11', 'payment_status' => 'Unpaid', 'time' => '2020-08-12' ],
 	],
 	'bulk_actions'	=> [
-		'delete'	=> __( 'Delete', 'plugin-client' ),
-		'draft'		=> __( 'Draft', 'plugin-client' ),
+		'delete'	=> __( 'Delete', 'suffix-master' ),
+		'draft'		=> __( 'Draft', 'suffix-master' ),
 	],
 ];
 
