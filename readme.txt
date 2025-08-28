@@ -1,6 +1,6 @@
 === Suffix Master ===
 Contributors: al-imran-akash 
-Tags: suffix, title, woocommerce, branding, seo, content, price, slug, customization, marketing
+Tags: suffix, title, woocommerce, branding, seo
 Requires at least: 4.0
 Tested up to: 6.8
 Requires PHP: 7.0
@@ -8,7 +8,7 @@ Stable tag: 0.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically add custom suffixes to titles, prices, content, and slugs across your WordPress site with advanced WooCommerce integration and per-item control.
+Add custom suffixes to titles, prices, content, and slugs across your WordPress site with advanced WooCommerce integration.
 
 == Description ==
 

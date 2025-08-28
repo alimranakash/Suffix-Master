@@ -1,0 +1,40 @@
+# WordPress.org Plugin Directory - Files to exclude from distribution
+
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# System files
+desktop.ini
+Thumbs.db
+.DS_Store
+*.tmp
+
+# Development files
+.distignore
+node_modules/
+*.log
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Build files
+webpack.config.js
+gulpfile.js
+package.json
+package-lock.json
+yarn.lock
+
+# Documentation (if not needed in distribution)
+# docs/
+# README.md
+
+# Test files
+tests/
+phpunit.xml
+.phpunit.result.cache
